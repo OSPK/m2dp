@@ -38,7 +38,7 @@ h1 {
 .menu {
 	width: 100%;
 	padding: 2em 0em;
-	background: aliceblue;
+	background: #4ECBAA;
     list-style-type: none;
     text-align: center;
 }
@@ -47,7 +47,7 @@ h1 {
 }
 .menu li a {
 	padding:0.5em 20%;
-	background-color: lightgreen;
+	background-color: #3BEA86;
 }
 .category {
 	margin: 1em 0em;
