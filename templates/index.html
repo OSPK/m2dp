@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+	{% block content %}
+	<div class="container">
+	{% for news in news %}
+		<p class="category {{category}}">{{ news.category_name }}</p>
+		<img src="{{ news.primary_img_path|replace('print_images/100/', 'print_images/small/') }}" alt="">
+		<h1><a href="/c/d/{{news.news_id}}">{{ news.news_title }}</a></h1>
+		<p class="date">{{news.date_published}}</p><HR><BR>
+	{% endfor %}
+	</div>
+{% endblock %}

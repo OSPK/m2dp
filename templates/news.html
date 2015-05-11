@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+	<p class="category {{category}}">{{ news.category_name }}</p>
+	<h1>{{ news.news_title }}</h1>
+	<p class="date">{{news.date_published}}</p>
+	<img src="{{ news.primary_img_path|replace('_small', '_medium') }}" alt="">
+	<div class="content">{{ news.news_content|safe }}</div>
+</div>
+
+<h1>{{status}}</h1>
+<h2>{{mid}}</h2>
+
+{% endblock %}

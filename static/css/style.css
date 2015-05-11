@@ -1,0 +1,63 @@
+/*local('Jameel Noori Nastaleeq'),*/
+@font-face {
+	font-family: 'Urdu';
+	src:url('../fonts/nafees-nastaleeq-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/nafees-nastaleeq-webfont.woff') format('woff'),
+	url('../fonts/nafees-nastaleeq-webfont.ttf') format('truetype'),
+	url('../fonts/nafees-nastaleeq-webfont.svg#NafeesRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	line-height: 2;
+}
+html {
+  font-size: 12px;
+}
+body {
+	font-family: Urdu;
+	direction: rtl;
+}
+h1 {
+	font-size: 250%;
+	line-height: 300%;
+	margin:0.5em 0;
+}
+.clearfix {
+	overflow: auto;
+  	zoom: 1;
+	clear:both;
+}
+.container {
+	width:90%;
+	margin:0px auto;
+}
+.content {
+	font-size:150%;
+	margin-top:2em;
+	line-height: 300%;
+}
+.menu {
+	width: 100%;
+	padding: 2em 0em;
+	background: aliceblue;
+    list-style-type: none;
+    text-align: center;
+}
+.menu li {
+	
+}
+.menu li a {
+	padding:0.5em 20%;
+	background-color: lightgreen;
+}
+.category {
+	margin: 1em 0em;
+	padding: 1em 1em;
+	padding-top:1.5em;
+	width:5em;
+	text-align: center;
+	background-color: #ccc;
+}
+.date {
+	text-align: right;
+	margin:0.5em 0;
+}
