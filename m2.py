@@ -6,7 +6,7 @@ import pymongo
 import pprint
 
 application = Flask(__name__)
-conn = pymongo.MongoClient()
+conn = pymongo.MongoClient("mongodb://linus:12345@localhost/?authMechanism=SCRAM-SHA-1")
 db = conn.test
 col = db.news
 
