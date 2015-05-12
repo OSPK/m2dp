@@ -12,7 +12,7 @@ col = db.news
 
 @application.route('/')
 def index():
-	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/20/print_or_digital/print/news_image_size/100')
+	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/20/print_or_digital/digital/news_image_size/small')
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
