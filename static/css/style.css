@@ -16,6 +16,9 @@ body {
 	font-family: Urdu;
 	direction: rtl;
 }
+a {
+	text-decoration: none;
+}
 h1 {
 	font-size: 250%;
 	line-height: 300%;
@@ -57,7 +60,45 @@ h1 {
 	text-align: center;
 	background-color: #ccc;
 }
+.قومی {
+	background-color: #016F3A;
+	color:white;
+}
+.ڈیلی_بائیٹس {
+	background-color: #DB3030;
+	color:white;
+}
+.کھیل {
+	background-color: #D78C17;
+	color:white;
+}
+.بین_الاقوامی {
+	background-color: #B5380A;
+	color:white;
+}
+.تفریح {
+	background-color: #4197CB;
+	color:white;	
+}
+.سائنس_اور_ٹیکنالوجی {
+	background-color: #014F90;
+	color:white;
+}
+.کالم {
+	background-color: #222222;
+	color:white;
+}
+.تعلیم_و_صحت {
+	background-color: #32B55B;
+	color:white;
+}
 .date {
 	text-align: right;
 	margin:0.5em 0;
+}
+
+.thumb {
+	float:right;
+	margin-left:10px;
+	margin-top:10px;
 }
