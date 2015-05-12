@@ -36,6 +36,9 @@ h1 {
 	width:90%;
 	margin:0px auto;
 }
+.img-container {
+	width:100%;
+}
 .content {
 	font-size:150%;
 	margin-top:2em;
