@@ -19,6 +19,9 @@ body {
 a {
 	text-decoration: none;
 }
+img {
+	max-width: 100%;
+}
 h1 {
 	font-size: 250%;
 	line-height: 300%;
@@ -101,4 +104,33 @@ h1 {
 	float:right;
 	margin-left:10px;
 	margin-top:10px;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+	html {
+  		font-size: 10px;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    html {
+  		font-size: 8px;
+	}
 }
