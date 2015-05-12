@@ -4,13 +4,17 @@ from flask import jsonify
 import urllib, json
 import pymongo
 import pprint
+from flask.ext.cache import Cache
 
 application = Flask(__name__)
 conn = pymongo.MongoClient("mongodb://m2:12345@localhost/test?authMechanism=SCRAM-SHA-1")
 db = conn.test
 col = db.news
 
+cache = Cache(application,config={'CACHE_TYPE': 'simple'})
+
 @application.route('/')
+@cache.cached(timeout=120)
 def index():
 	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/20/print_or_digital/digital/news_image_size/small')
 	response = urllib.urlopen(url);
