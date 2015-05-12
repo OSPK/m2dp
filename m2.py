@@ -7,7 +7,7 @@ import pprint
 from werkzeug.contrib.cache import SimpleCache
 
 application = Flask(__name__)
-conn = pymongo.MongoClient("mongodb://m2:12345@localhost/test?authMechanism=SCRAM-SHA-1")
+conn = pymongo.MongoClient("mongodb://m2user:hailmyas$@localhost/test?authMechanism=SCRAM-SHA-1")
 db = conn.test
 col = db.news
 
