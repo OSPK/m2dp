@@ -16,7 +16,7 @@ cache = Cache(application,config={'CACHE_TYPE': 'simple'})
 @application.route('/')
 @cache.cached(timeout=120)
 def index():
-	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/20/print_or_digital/digital/news_image_size/small')
+	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/20/print_or_digital/digital/news_image_size/thumbnail')
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
