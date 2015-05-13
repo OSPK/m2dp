@@ -23,7 +23,6 @@ def index():
 	return render_template('index.html', news=news)
 
 @application.route('/categories/')
-@cache.cached(timeout=120)
 def show_category_index():
 	return render_template('categories.html')
 
