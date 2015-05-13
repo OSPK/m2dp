@@ -32,7 +32,7 @@ h1 {
 	margin:0.5em 0;
 }
 .headline {
-	overflow-y:hidden;
+	padding-right:10px;
 }
 .clearfix {
 	overflow: auto;
@@ -42,6 +42,7 @@ h1 {
 .container {
 	width:90%;
 	margin:0px auto;
+	margin-top:40px;
 }
 .img-container {
 	width:100%;
@@ -71,8 +72,11 @@ h1 {
 	width:50%;
 }
 .menu li a {
-	background-color: #3BEA86;
-	border-bottom: 3px solid #222;
+	background-color: #66D774;
+	border-bottom: 3px solid #05512C;
+	border-right:1px solid #05512C;
+	border-left:1px solid #05512C;
+	border-radius:5px;
 	width: 100%;
 	padding: 1.5em 0px;
 	display: inline-block;
@@ -138,9 +142,9 @@ h1 {
 }
 
 .thumb {
-	float: right;
+/*	float: right;
 	margin-left: 20px;
-	margin-top: 10px;
+	margin-top: 10px;*/
 	border-radius: 5%;
 }
 
