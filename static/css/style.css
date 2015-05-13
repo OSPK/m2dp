@@ -27,9 +27,12 @@ img {
 	max-width: 100%;
 }
 h1 {
-	font-size: 250%;
+	font-size: 200%;
 	line-height: 300%;
 	margin:0.5em 0;
+}
+.headline {
+	overflow-y:hidden;
 }
 .clearfix {
 	overflow: auto;
@@ -69,6 +72,7 @@ h1 {
 }
 .menu li a {
 	background-color: #3BEA86;
+	border-bottom:3px solid #222;
 	width: 99%;
 	padding: 1.5em;
 	display: inline-block;
