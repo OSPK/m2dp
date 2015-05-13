@@ -72,6 +72,7 @@ h1 {
 	width:50%;
 }
 .menu li a {
+	font-size:1.5em;
 	background-color: #66D774;
 	border-bottom: 3px solid #05512C;
 	border-right:1px solid #05512C;
