@@ -13,9 +13,10 @@
 	</head>
 	<body>
 		<ul class="menu">
-			<li>
-				<a href="/">Home</a>
-			</li>
+			<img class="clearfix" src="{{ url_for('static', filename='images/daily-pakistan-logo.png') }}" alt="Home">
+			<br>
+			<li><a href="/categories">Categories</a></li>
+			<li><a class="home" href="/">Home</a></li>&nbsp;
 		</ul>
 		{% block content %}{% endblock %}
 	</body>

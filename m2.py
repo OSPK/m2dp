@@ -22,9 +22,19 @@ def index():
 
 	return render_template('index.html', news=news)
 
+@application.route('/categories/')
+@cache.cached(timeout=120)
+def show_category_index():
+	return render_template('categories.html')
+
 @application.route('/category/<categoryname>/')
+@cache.cached(timeout=120)
 def show_category_page(categoryname):
-	return 'Category %s' % categoryname
+	url = ('http://dailypakistan.com.pk/mobile_api/category_news_listing/format/json/category_slug/%s/start_limit/1/num_of_records/10/news_image_size/thumbnail' % categoryname)
+	response = urllib.urlopen(url);
+	news = json.load(response)
+
+	return render_template('index.html', news=news)
 
 @application.route('/<category>/<date>/<int:news_id>/')
 def show_news(category,date,news_id):

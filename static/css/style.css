@@ -11,6 +11,10 @@
 }
 html {
   font-size: 12px;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 body {
 	font-family: Urdu;
@@ -46,55 +50,73 @@ h1 {
 }
 .menu {
 	width: 100%;
-	padding: 2em 0em;
-	background: #4ECBAA;
-    list-style-type: none;
-    text-align: center;
+	background: #016F3A;
+	list-style-type: none;
+	text-align: center;
+	border-bottom: 2px solid #4AA1E0;
 }
 .menu li {
-	
+	float:left;
+	width:50%;
 }
 .menu li a {
-	padding:0.5em 20%;
 	background-color: #3BEA86;
+	width: 99%;
+	padding: 1em;
+	display: inline-block;
+}
+.menu li a:hover {
+	background-color: #ccc;
+	color:black;
+	font-weight: bold;
 }
 .category {
 	margin: 1em 0em;
 	padding: 1em 1em;
 	padding-top:1.5em;
-	width:5em;
+	width:9em;
 	text-align: center;
 	background-color: #ccc;
 }
-.قومی {
+.cats a {
+  color: #FFF;
+  width: 100%;
+  display: inline-block;
+  padding-right: 20px;
+}
+.cats:hover, .cats a:hover, .cats:focus, .cats a:focus {
+	background-color: #bbb;
+	color:#222;
+}
+.قومی, .national {
 	background-color: #016F3A;
 	color:white;
 }
-.ڈیلی_بائیٹس {
+.ڈیلی_بائیٹس, .daily-bites {
 	background-color: #DB3030;
 	color:white;
 }
-.کھیل {
+.کھیل, .sports {
 	background-color: #D78C17;
 	color:white;
 }
-.بین_الاقوامی {
+.بین_الاقوامی, .international {
 	background-color: #B5380A;
 	color:white;
 }
-.تفریح {
+.تفریح, .entertainment {
 	background-color: #4197CB;
 	color:white;	
 }
-.سائنس_اور_ٹیکنالوجی {
+.سائنس_اور_ٹیکنالوجی, .science-and-technology {
 	background-color: #014F90;
 	color:white;
 }
-.کالم {
+.کالم, .columns {
 	background-color: #222222;
 	color:white;
 }
-.تعلیم_و_صحت {
+.تعلیم_و_صحت, .education-and-health {
 	background-color: #32B55B;
 	color:white;
 }
@@ -104,9 +126,10 @@ h1 {
 }
 
 .thumb {
-	float:right;
-	margin-left:10px;
-	margin-top:10px;
+	float: right;
+	margin-left: 20px;
+	margin-top: 10px;
+	border-radius: 5%;
 }
 
 /* Large Devices, Wide Screens */
