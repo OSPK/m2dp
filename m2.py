@@ -16,7 +16,7 @@ cache = Cache(application,config={'CACHE_TYPE': 'simple'})
 @application.route('/')
 @cache.cached(timeout=120)
 def index():
-	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/20/print_or_digital/digital/news_image_size/thumbnail')
+	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/20/print_or_digital/digital/news_image_size/small')
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
@@ -29,7 +29,7 @@ def show_category_index():
 @application.route('/category/<categoryname>/')
 @cache.cached(timeout=120)
 def show_category_page(categoryname):
-	url = ('http://dailypakistan.com.pk/mobile_api/category_news_listing/format/json/category_slug/%s/start_limit/1/num_of_records/10/news_image_size/thumbnail' % categoryname)
+	url = ('http://dailypakistan.com.pk/mobile_api/category_news_listing/format/json/category_slug/%s/start_limit/1/num_of_records/10/news_image_size/small' % categoryname)
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
@@ -50,7 +50,7 @@ def show_news(category,date,news_id):
 			status = "database"
 
 	else:
-		url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/100' % news_id)
+		url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
 		response = urllib.urlopen(url);
 		news = json.load(response)
 
@@ -66,7 +66,7 @@ def show_news(category,date,news_id):
 
 @application.route('/<category>/<date>/<int:news_id>/update')
 def update_news(category,date,news_id):
-	url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/100' % news_id)
+	url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
