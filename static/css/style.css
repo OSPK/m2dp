@@ -48,12 +48,20 @@ h1 {
 	margin-top:2em;
 	line-height: 300%;
 }
+.menu-container {
+	background: #016F3A;
+	text-align: center;
+	padding:20px;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #4AA1E0;
+}
+.menu-container img {
+
+}
 .menu {
 	width: 100%;
-	background: #016F3A;
 	list-style-type: none;
 	text-align: center;
-	border-bottom: 2px solid #4AA1E0;
 }
 .menu li {
 	float:left;
@@ -62,7 +70,7 @@ h1 {
 .menu li a {
 	background-color: #3BEA86;
 	width: 99%;
-	padding: 1em;
+	padding: 1.5em;
 	display: inline-block;
 }
 .menu li a:hover {
