@@ -12,12 +12,13 @@
 
 	</head>
 	<body>
-		<ul class="menu">
+		<div class="menu-container">
 			<img class="clearfix" src="{{ url_for('static', filename='images/daily-pakistan-logo.png') }}" alt="Home">
-			<br>
-			<li><a href="/categories">Categories</a></li>
-			<li><a class="home" href="/">Home</a></li>&nbsp;
-		</ul>
+			<ul class="menu">
+				<li><a href="/categories">Categories</a></li>
+				<li><a class="home" href="/">Home</a></li>&nbsp;
+			</ul>
+		</div>
 		{% block content %}{% endblock %}
 	</body>
 </html>
