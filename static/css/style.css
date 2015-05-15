@@ -149,6 +149,13 @@ h1 {
 	border-radius: 5%;
 }
 
+.db {
+	color: green!important;
+}
+.api {
+	color: blue!important;
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
