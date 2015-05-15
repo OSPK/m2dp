@@ -6,9 +6,7 @@
 	<p class="date">{{news.date_published}}</p>
 	<div class="img-container"><img src="{{ news.primary_img_path|replace('_small', '_medium') }}" alt=""></div>
 	<div class="content">{{ news.news_content|safe|replace('dailypakistan.com.pk', 'm2.dailypakistan.com.pk') }}</div>
+	<span class="{{status}}">&#9679;</span>
 </div>
-
-<h1>{{status}}</h1>
-<h2>{{mid}}</h2>
 
 {% endblock %}

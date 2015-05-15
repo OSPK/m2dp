@@ -47,7 +47,7 @@ def show_news(category,date,news_id):
 		mid = news.get('_id')
 
 		if "news_title" in news:
-			status = "database"
+			status = "db"
 
 	else:
 		url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
@@ -56,7 +56,7 @@ def show_news(category,date,news_id):
 
 		if "news_title" in news:
 			col.insert(news)
-			status = "INTERNET"
+			status = "api"
 
 
 		else:
