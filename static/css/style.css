@@ -57,10 +57,9 @@ h1 {
 	text-align: center;
 	padding:20px;
 	padding-bottom: 5px;
-	border-bottom: 2px solid #4AA1E0;
 }
 .menu-container img {
-
+	margin-bottom:20px;
 }
 .menu {
 	width: 100%;
