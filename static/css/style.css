@@ -81,10 +81,11 @@ h1 {
 	padding: 1em 0px;
 	display: inline-block;
 }
-.menu li a:hover {
+.menu li a:hover, .menu li a:focus {
 	background-color: #ccc;
 	color:black;
 	font-weight: bold;
+	border-bottom: 3px solid #526D80;
 }
 .category {
 	margin: 1em 0em;
@@ -153,6 +154,7 @@ h1 {
 }
 .api {
 	color: blue!important;
+	font-size: 5px;
 }
 
 footer {
