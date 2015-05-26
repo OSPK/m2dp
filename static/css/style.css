@@ -160,7 +160,11 @@ footer {
 	padding:30px;
 }
 footer p {
-	width:50%;
+	margin: 10px;
+	color: #333;
+}
+footer img {
+	border: 5px solid rgb(1, 111, 58);
 }
 
 /* Large Devices, Wide Screens */
