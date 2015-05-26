@@ -33,6 +33,7 @@ h1 {
 }
 .headline {
 	padding-right:10px;
+	margin-bottom: -10px;
 }
 .clearfix {
 	overflow: auto;
