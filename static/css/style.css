@@ -166,6 +166,7 @@ footer {
 footer p {
 	margin: 10px;
 	color: #333;
+	word-spacing: 0.2em;
 }
 footer img {
 	border: 5px solid rgb(1, 111, 58);
