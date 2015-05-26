@@ -151,13 +151,14 @@ h1 {
 	margin-top: 10px;*/
 	border-radius: 5%;
 }
-
+.dot {
+	font-size: 5px;
+}
 .db {
 	color: green!important;
 }
 .api {
 	color: blue!important;
-	font-size: 5px;
 }
 
 footer {
