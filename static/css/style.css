@@ -88,6 +88,8 @@ h1 {
 	color:#444;
 	font-weight: bold;
 	border-bottom: 3px solid #526D80;
+	border-right: 1px solid #526D80;
+	border-left: 1px solid #526D80;
 }
 .category {
 	margin: 1em 0em;
