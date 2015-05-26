@@ -203,10 +203,11 @@ footer img {
   		font-size: 10px;
 	}
 	.content {
-		font-size:250%;
+		font-size:200%;
 		line-height: 450%;
 	}
 	h1 {
+		font-size: 300%;
 		line-height: 400%;
 	}
 }
