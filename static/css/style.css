@@ -71,14 +71,14 @@ h1 {
 	width:50%;
 }
 .menu li a {
-	font-size:1.5em;
-	background-color: #66D774;
-	border-bottom: 3px solid #05512C;
-	border-right:1px solid #05512C;
-	border-left:1px solid #05512C;
-	border-radius:5px;
+	font-size: 1.5em;
+	background-color: #8AD2F2;
+	border-bottom: 3px solid #3A8DC8;
+	border-right: 1px solid #3A8DC8;
+	border-left: 1px solid #3A8DC8;
+	border-radius: 5px;
 	width: 100%;
-	padding: 1.5em 0px;
+	padding: 1em 0px;
 	display: inline-block;
 }
 .menu li a:hover {
