@@ -73,17 +73,19 @@ h1 {
 .menu li a {
 	font-size: 1.5em;
 	background-color: #8AD2F2;
+	color: #3C596C;
 	border-bottom: 3px solid #3A8DC8;
 	border-right: 1px solid #3A8DC8;
 	border-left: 1px solid #3A8DC8;
 	border-radius: 5px;
 	width: 100%;
-	padding: 1em 0px;
+	padding-top: 1.1em;
+	padding-bottom: 1em;
 	display: inline-block;
 }
 .menu li a:hover, .menu li a:focus {
 	background-color: #ccc;
-	color:black;
+	color:#444;
 	font-weight: bold;
 	border-bottom: 3px solid #526D80;
 }
