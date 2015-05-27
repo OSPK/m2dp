@@ -188,10 +188,8 @@ footer img {
 
 /* All Bigger screens */
 @media only screen and (min-width : 992px) {
-	.container {
+	.content {
 		width: 70%;
-		margin: 0px 5em;
-		margin-top: 3em;
 	}
 }
 
