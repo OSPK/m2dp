@@ -16,7 +16,7 @@ cache = Cache(application,config={'CACHE_TYPE': 'simple'})
 @application.route('/')
 @cache.cached(timeout=120)
 def index():
-	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/30/print_or_digital/digital/news_image_size/small')
+	url = ('http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/15/print_or_digital/digital/news_image_size/small')
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
@@ -29,7 +29,7 @@ def show_category_index():
 @application.route('/category/<categoryname>/')
 @cache.cached(timeout=120)
 def show_category_page(categoryname):
-	url = ('http://dailypakistan.com.pk/mobile_api/category_news_listing/format/json/category_slug/%s/start_limit/0/num_of_records/30/news_image_size/small' % categoryname)
+	url = ('http://dailypakistan.com.pk/mobile_api/category_news_listing/format/json/category_slug/%s/start_limit/0/num_of_records/15/news_image_size/small' % categoryname)
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
