@@ -188,8 +188,8 @@ footer {
 	background: #016F3A;
 }
 footer p {
-	margin: 10px;
-	word-spacing: 0.2em;
+  margin: 10px;
+  font-family: sans-serif;
 }
 footer img {
 	border: 5px solid rgb(1, 111, 58);
