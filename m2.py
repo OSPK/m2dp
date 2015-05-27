@@ -96,4 +96,4 @@ def update_news(category,date,news_id):
 	return render_template('news.html', news=news, category=category, status=status)
 
 if __name__ == '__main__':
-	application.run(debug=True,host='0.0.0.0')
+	application.run(host='0.0.0.0')
