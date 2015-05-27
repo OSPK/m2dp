@@ -186,6 +186,15 @@ footer img {
 	border: 5px solid rgb(1, 111, 58);
 }
 
+/* All Bigger screens */
+@media only screen and (min-width : 992px) {
+	.container {
+		width: 70%;
+		margin: 0px 5em;
+		margin-top: 3em;
+	}
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
@@ -193,11 +202,7 @@ footer img {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-	.container {
-		width: 70%;
-		margin: 0px 5em;
-		margin-top: 3em;
-	}
+
 }
 
 /* Small Devices, Tablets */
