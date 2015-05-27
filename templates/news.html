@@ -1,4 +1,9 @@
 {% extends "layout.html" %}
+
+{% block title %}
+<title>{{ news.news_title }} - Telenor News</title>
+{% endblock %}
+
 {% block content %}
 <div class="container">
 	<p class="category {{news.category_name|replace(' ','_')}}">{{ news.category_name }}</p>
@@ -8,5 +13,4 @@
 	<div class="content">{{ news.news_content|safe|replace('dailypakistan.com.pk', 'telenornews.pk') }}</div>
 	<span class="dot {{status}}">&#9679;</span>
 </div>
-
 {% endblock %}
