@@ -65,6 +65,9 @@ article.story {
   padding: 1.2em 0em 2.4em 0em;
   border-bottom: 1px dotted #BEBEBE;
 }
+article.story:nth-child(even) {
+	background-color: #efefef;
+}
 .menu-container {
 	background: #FFF;
 	text-align: center;
