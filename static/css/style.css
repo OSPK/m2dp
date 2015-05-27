@@ -62,7 +62,7 @@ h1 {
 	display: block;
 }
 article.story {
-  padding: 1.2em 0em 2.4em 0em;
+  padding: 1.2em 2em 2.4em 0em;
   border-bottom: 1px dotted #BEBEBE;
 }
 article.story:nth-child(even) {
