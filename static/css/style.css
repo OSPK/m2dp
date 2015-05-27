@@ -173,10 +173,11 @@ h1 {
 footer {
 	text-align: center;
 	padding:30px;
+	color: #efefef;
+	background: #016F3A;
 }
 footer p {
 	margin: 10px;
-	color: #333;
 	word-spacing: 0.2em;
 }
 footer img {
