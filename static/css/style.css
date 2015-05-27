@@ -68,6 +68,10 @@ article.story {
 article.story:nth-child(even) {
 	background-color: #efefef;
 }
+article.story:last-child {
+	border-bottom: 0px dotted #fff;
+}
+
 .menu-container {
 	background: #FFF;
 	text-align: center;
