@@ -74,7 +74,8 @@ def show_news(category,date,news_id):
 
 		if "news_title" in news:
 			status = "db"
-			titl = news['news_title']
+			titl = news.get('news_title')
+			titl = unicode(titl, "utf-8")
 
 	else:
 		url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
@@ -84,7 +85,8 @@ def show_news(category,date,news_id):
 		if "news_title" in news:
 			col.insert(news)
 			status = "api"
-			titl = news['news_title']
+			titl = news.get('news_title')
+			titl = unicode(titl, "utf-8")
 
 		else:
 			status = news['result']
