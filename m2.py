@@ -5,11 +5,21 @@ import urllib, json
 import pymongo
 import pprint
 from flask.ext.cache import Cache
+from pyga.requests import Tracker, Page, Session, Visitor
 
 application = Flask(__name__)
 conn = pymongo.MongoClient("mongodb://m2user:hailmyas$@localhost/test?authMechanism=SCRAM-SHA-1")
 db = conn.test
 col = db.news
+
+#PYGA ANALYTICS START
+tracker = Tracker('MO-XXXXX-X', 'yourdomain.com')
+visitor = Visitor()
+#visitor.ip_address = '194.54.176.12'
+session = Session()
+# page = Page('/path')
+# tracker.track_pageview(page, session, visitor)
+#PYGA ANALYTCIS STOP
 
 cache = Cache(application,config={'CACHE_TYPE': 'simple'})
 
@@ -20,10 +30,21 @@ def index():
 	response = urllib.urlopen(url);
 	news = json.load(response)
 
+	#GA Track
+	page = Page('/')
+	tracker.track_pageview(page, session, visitor)
+	#/GA track
+
 	return render_template('index.html', news=news)
 
 @application.route('/categories/')
 def show_category_index():
+
+	#GA Track
+	page = Page('/categories/')
+	tracker.track_pageview(page, session, visitor)
+	#/GA track
+	
 	return render_template('categories.html')
 
 @application.route('/category/<categoryname>/')
@@ -32,6 +53,11 @@ def show_category_page(categoryname):
 	url = ('http://dailypakistan.com.pk/mobile_api/category_news_listing/format/json/category_slug/%s/start_limit/0/num_of_records/15/news_image_size/small' % categoryname)
 	response = urllib.urlopen(url);
 	news = json.load(response)
+
+	#GA Track
+	page = Page('/categories/%s' % categoryname)
+	tracker.track_pageview(page, session, visitor)
+	#/GA track
 
 	return render_template('index.html', news=news)
 
@@ -61,6 +87,11 @@ def show_news(category,date,news_id):
 
 		else:
 			status = news['result']
+
+	#GA Track
+	page = Page('/c/d/%s' % news_id)
+	tracker.track_pageview(page, session, visitor)
+	#/GA track
 		
 	return render_template('news.html', news=news, category=category, status=status, mid=mid)
 
@@ -92,6 +123,11 @@ def update_news(category,date,news_id):
 	# 	status = "FOUND IT"
 	# else:
 	# 	status = news.get('result')
+
+	#GA Track
+	page = Page('/c/d/%s/update' % news_id)
+	tracker.track_pageview(page, session, visitor)
+	#/GA track
 
 	return render_template('news.html', news=news, category=category, status=status)
 
