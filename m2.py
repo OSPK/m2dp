@@ -88,7 +88,7 @@ def show_news(category,date,news_id):
 		else:
 			status = news['result']
 
-	titl = "test"
+	titl = str(news.get('news_title'))
 
 	#GA Track
 	page = Page('/c/d/%s' % news_id)
