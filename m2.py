@@ -75,7 +75,6 @@ def show_news(category,date,news_id):
 		if "news_title" in news:
 			status = "db"
 			titl = news.get('news_title')
-			titl = unicode(titl, "utf-8")
 
 	else:
 		url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
@@ -86,7 +85,6 @@ def show_news(category,date,news_id):
 			col.insert(news)
 			status = "api"
 			titl = news.get('news_title')
-			titl = unicode(titl, "utf-8")
 
 		else:
 			status = news['result']
@@ -95,7 +93,7 @@ def show_news(category,date,news_id):
 
 	#GA Track
 	page = Page('/c/d/%s' % news_id)
-	page.title = titl
+	#page.title = titl
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 		
