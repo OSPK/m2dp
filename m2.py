@@ -74,6 +74,7 @@ def show_news(category,date,news_id):
 
 		if "news_title" in news:
 			status = "db"
+			titl = news['news_title']
 
 	else:
 		url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
@@ -83,12 +84,12 @@ def show_news(category,date,news_id):
 		if "news_title" in news:
 			col.insert(news)
 			status = "api"
-
+			titl = news['news_title']
 
 		else:
 			status = news['result']
+			titl = "None"
 
-	titl = str(news['news_title'])
 
 	#GA Track
 	page = Page('/c/d/%s' % news_id)
