@@ -91,7 +91,7 @@ def show_news(category,date,news_id):
 	title = news.get('news_title')
 
 	#GA Track
-	page = Page('/c/d/%s' % news_id)
+	page = Page('/c/d/%s?%s' % (news_id, title))
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 		
