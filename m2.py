@@ -94,10 +94,11 @@ def show_news(category,date,news_id):
 	#GA Track
 	page = Page('/c/d/%s' % news_id)
 	page.title = titl + " - " + "Telenor News"
+	pt = page.title
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 		
-	return render_template('news.html', news=news, category=category, status=status, mid=mid)
+	return render_template('news.html', news=news, category=category, status=status, mid=mid, pt=pt)
 
 @application.route('/<category>/<date>/<int:news_id>/update')
 def update_news(category,date,news_id):
