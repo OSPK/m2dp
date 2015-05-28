@@ -97,7 +97,7 @@ def show_news(category,date,news_id):
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 		
-	return render_template('news.html', news=news, category=category, status=status, mid=mid)
+	return render_template('news.html', news=news, category=category, status=status, mid=mid, titl=titl)
 
 @application.route('/<category>/<date>/<int:news_id>/update')
 def update_news(category,date,news_id):
