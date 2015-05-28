@@ -13,9 +13,9 @@ db = conn.test
 col = db.news
 
 #PYGA ANALYTICS START
-tracker = Tracker('MO-XXXXX-X', 'yourdomain.com')
+tracker = Tracker('UA-63492173-1', 'telenornews.pk')
 visitor = Visitor()
-#visitor.ip_address = '194.54.176.12'
+visitor.ip_address = '194.54.176.12'
 session = Session()
 # page = Page('/path')
 # tracker.track_pageview(page, session, visitor)
