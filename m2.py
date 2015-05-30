@@ -16,7 +16,7 @@ col = db.news
 #PYGA ANALYTICS START
 tracker = Tracker('UA-63492173-1', 'telenornews.pk')
 visitor = Visitor()
-visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+#visitor.ip_address = 
 session = Session()
 # page = Page('/path')
 # tracker.track_pageview(page, session, visitor)
@@ -32,11 +32,12 @@ def index():
 	news = json.load(response)
 
 	#GA Track
+	ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 	page = Page('/')
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 
-	return render_template('index.html', news=news)
+	return render_template('index.html', news=news, ip=ip)
 
 @application.route('/categories/')
 def show_category_index():
