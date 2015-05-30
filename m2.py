@@ -32,12 +32,12 @@ def index():
 	news = json.load(response)
 
 	#GA Track
-	ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 	page = Page('/')
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 
-	return render_template('index.html', news=news, ip=ip)
+	return render_template('index.html', news=news)
 
 @application.route('/categories/')
 def show_category_index():
