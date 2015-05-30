@@ -44,6 +44,7 @@ def show_category_index():
 
 	#GA Track
 	page = Page('/categories/')
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 	
@@ -58,6 +59,7 @@ def show_category_page(categoryname):
 
 	#GA Track
 	page = Page('/categories/%s' % categoryname)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 
@@ -95,6 +97,7 @@ def show_news(category,date,news_id):
 
 	#GA Track
 	page = Page('/c/d/%s' % news_id)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 	#page.title = titl
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
@@ -132,6 +135,7 @@ def update_news(category,date,news_id):
 
 	#GA Track
 	page = Page('/c/d/%s/update' % news_id)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 	tracker.track_pageview(page, session, visitor)
 	#/GA track
 
