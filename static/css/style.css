@@ -223,16 +223,17 @@ footer img {
 	html {
   		font-size: 10px;
 	}
+	.content {
+	  font-size: 200%;
+	  margin-top: 2em;
+	  line-height: 190%;
+	}
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     html {
   		font-size: 10px;
-	}
-	.content {
-		font-size:200%;
-		line-height: 250%;
 	}
 	h1 {
 		font-size: 250%;
