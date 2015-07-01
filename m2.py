@@ -14,10 +14,10 @@ db = conn.test
 col = db.news
 
 #PYGA ANALYTICS START
-##tracker = Tracker('UA-63492173-1', 'telenornews.pk')
-##visitor = Visitor()
+tracker = Tracker('UA-63492173-1', 'telenornews.pk')
+visitor = Visitor()
 #visitor.ip_address = 
-##session = Session()
+session = Session()
 # page = Page('/path')
 # tracker.track_pageview(page, session, visitor)
 #PYGA ANALYTCIS STOP
@@ -32,9 +32,9 @@ def index():
 	news = json.load(response)
 
 	#GA Track
-	# visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-	# page = Page('/')
-	# tracker.track_pageview(page, session, visitor)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+	page = Page('/')
+	tracker.track_pageview(page, session, visitor)
 	#/GA track
 
 	return render_template('index.html', news=news)
@@ -43,9 +43,9 @@ def index():
 def show_category_index():
 
 	#GA Track
-	# page = Page('/categories/')
-	# visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-	# tracker.track_pageview(page, session, visitor)
+	page = Page('/categories/')
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+	tracker.track_pageview(page, session, visitor)
 	#/GA track
 	
 	return render_template('categories.html')
@@ -58,9 +58,9 @@ def show_category_page(categoryname):
 	news = json.load(response)
 
 	#GA Track
-	# page = Page('/categories/%s' % categoryname)
-	# visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-	# tracker.track_pageview(page, session, visitor)
+	page = Page('/categories/%s' % categoryname)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+	tracker.track_pageview(page, session, visitor)
 	#/GA track
 
 	return render_template('index.html', news=news)
@@ -96,9 +96,9 @@ def show_news(category,date,news_id):
 
 
 	#GA Track
-	# page = Page('/c/d/%s' % news_id)
-	# visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-	# tracker.track_pageview(page, session, visitor)
+	page = Page('/c/d/%s' % news_id)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+	tracker.track_pageview(page, session, visitor)
 	#/GA track
 		
 	return render_template('news.html', news=news, category=category, status=status, mid=mid)
@@ -133,9 +133,9 @@ def update_news(category,date,news_id):
 	# 	status = news.get('result')
 
 	#GA Track
-	# page = Page('/c/d/%s/update' % news_id)
-	# visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-	# tracker.track_pageview(page, session, visitor)
+	page = Page('/c/d/%s/update' % news_id)
+	visitor.ip_address = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+	tracker.track_pageview(page, session, visitor)
 	#/GA track
 
 	return render_template('news.html', news=news, category=category, status=status)
