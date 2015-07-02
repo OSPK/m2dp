@@ -149,8 +149,8 @@ def update_news(category,date,news_id):
 	return render_template('news.html', news=news, category=category, status=status)
 
 if __name__ == '__main__':
-	handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
-	handler.setLevel(logging.INFO)
+	#handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
+	#handler.setLevel(logging.INFO)
 	app.logger.addHandler(mail_handler)
 	#app.logger.addHandler(handler)
 	application.run(host='0.0.0.0')
