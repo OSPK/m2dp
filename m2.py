@@ -1,5 +1,6 @@
 import logging
 from logging.handlers import RotatingFileHandler
+from logging.handlers import SMTPHandler
 from flask import Flask
 from flask import render_template
 from flask import jsonify
@@ -26,12 +27,9 @@ session = Session()
 
 cache = Cache(application,config={'CACHE_TYPE': 'simple'})
 
-ADMINS = ['waqas@opensource.com.pk']
-if not app.debug:
-	from logging.handlers import SMTPHandler
-	mail_handler = SMTPHandler('127.0.0.1','server-error@example.com', ADMINS, 'YourApplication Failed')
-	mail_handler.setLevel(logging.ERROR)
-	app.logger.addHandler(mail_handler)
+ADMINSs = ['waqas@opensource.com.pk']
+mail_handler = SMTPHandler('127.0.0.1','server-error@example.com', ADMINSs, 'YourApplication Failed')
+mail_handler.setLevel(logging.ERROR)
 
 @application.route('/')
 @cache.cached(timeout=120)
@@ -153,5 +151,6 @@ def update_news(category,date,news_id):
 if __name__ == '__main__':
 	handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
 	handler.setLevel(logging.INFO)
-	app.logger.addHandler(handler)
+	app.logger.addHandler(mail_handler)
+	#app.logger.addHandler(handler)
 	application.run(debug=True,host='0.0.0.0')
