@@ -145,6 +145,6 @@ def update_news(category,date,news_id):
 
 if __name__ == '__main__':
 	handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
-    handler.setLevel(logging.INFO)
-    app.logger.addHandler(handler)
+	handler.setLevel(logging.INFO)
+	app.logger.addHandler(handler)
 	application.run(debug=True,host='0.0.0.0')
