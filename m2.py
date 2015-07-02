@@ -24,6 +24,16 @@ session = Session()
 
 cache = Cache(application,config={'CACHE_TYPE': 'simple'})
 
+ADMINS = ['waqas@opensource.com.pk']
+if not app.debug:
+    import logging
+    from logging.handlers import SMTPHandler
+    mail_handler = SMTPHandler('127.0.0.1',
+                               'waqas@opensource.com.pk',
+                               ADMINS, 'YourApplication Failed')
+    mail_handler.setLevel(logging.ERROR)
+    app.logger.addHandler(mail_handler)
+
 @application.route('/')
 @cache.cached(timeout=120)
 def index():
