@@ -1,6 +1,5 @@
 import logging
 from logging.handlers import RotatingFileHandler
-from logging.handlers import SMTPHandler
 from flask import Flask
 from flask import render_template
 from flask import jsonify
@@ -26,10 +25,6 @@ session = Session()
 #PYGA ANALYTCIS STOP
 
 cache = Cache(application,config={'CACHE_TYPE': 'simple'})
-
-ADMINSs = ['waqas@opensource.com.pk']
-mail_handler = SMTPHandler('127.0.0.1','server-error@example.com', ADMINSs, 'YourApplication Failed')
-mail_handler.setLevel(logging.ERROR)
 
 @application.route('/')
 @cache.cached(timeout=120)
@@ -149,8 +144,7 @@ def update_news(category,date,news_id):
 	return render_template('news.html', news=news, category=category, status=status)
 
 if __name__ == '__main__':
-	#handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
-	#handler.setLevel(logging.INFO)
-	app.logger.addHandler(mail_handler)
-	#app.logger.addHandler(handler)
+	handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
+	handler.setLevel(logging.INFO)
+	app.logger.addHandler(handler)
 	application.run(host='0.0.0.0')
