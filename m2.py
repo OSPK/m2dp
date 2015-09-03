@@ -12,7 +12,7 @@ from pyga.requests import Tracker, Page, Session, Visitor
 
 application = Flask(__name__)
 app = application
-conn = pymongo.MongoClient("mongodb://m2:12345@localhost/test?authMechanism=SCRAM-SHA-1")
+conn = pymongo.MongoClient("mongodb://m2user:hailmyas$@localhost/test?authMechanism=SCRAM-SHA-1")
 db = conn.test
 col = db.news
 
