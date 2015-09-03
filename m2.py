@@ -75,7 +75,8 @@ def show_news(category,date,news_id):
 	mid = None
 	exists = False
 
-	news = col.find_one({'news_id': nid})
+	#news = col.find_one({'news_id': nid})
+	news = None
 
 	if news is not None:
 		mid = news.get('_id')
