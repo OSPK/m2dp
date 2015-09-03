@@ -75,7 +75,7 @@ def show_news(category,date,news_id):
 	mid = None
 	exists = False
 
-	#news = col.find_one({'news_id': nid})
+	news = col.find_one({'news_id': nid})
 	news = None
 
 	if news is not None:
@@ -91,7 +91,7 @@ def show_news(category,date,news_id):
 		news = json.load(response)
 
 		if "news_title" in news:
-			#col.insert(news)
+			col.insert(news)
 			status = "api"
 			titl = news.get('news_title')
 
