@@ -11,8 +11,8 @@ from flask.ext.cache import Cache
 from pyga.requests import Tracker, Page, Session, Visitor
 
 application = Flask(__name__)
-conn = pymongo.MongoClient("mongodb://m2user:hailmyas$@localhost/test?authMechanism=SCRAM-SHA-1")
 app = application
+conn = pymongo.MongoClient("mongodb://m2:12345@localhost/test?authMechanism=SCRAM-SHA-1")
 db = conn.test
 col = db.news
 
@@ -69,7 +69,7 @@ def show_category_page(categoryname):
 	return render_template('index.html', news=news)
 
 @application.route('/<category>/<date>/<int:news_id>/')
-@cache.cached(timeout=920)
+@cache.cached(timeout=1920)
 def show_news(category,date,news_id):
 	nid = str(news_id)
 	mid = None
@@ -77,6 +77,7 @@ def show_news(category,date,news_id):
 
 	#news = col.find_one({'news_id': nid})
 	news = None
+
 	if news is not None:
 		mid = news.get('_id')
 
@@ -90,7 +91,7 @@ def show_news(category,date,news_id):
 		news = json.load(response)
 
 		if "news_title" in news:
-			col.insert(news)
+			#col.insert(news)
 			status = "api"
 			titl = news.get('news_title')
 
@@ -148,4 +149,5 @@ if __name__ == '__main__':
 	handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
 	handler.setLevel(logging.INFO)
 	app.logger.addHandler(handler)
-	application.run(host='0.0.0.0',debug=True)
+	application.run(debug=True,host='0.0.0.0')
+
