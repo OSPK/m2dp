@@ -69,7 +69,7 @@ def show_category_page(categoryname):
 	return render_template('index.html', news=news)
 
 @application.route('/<category>/<date>/<int:news_id>/')
-@cache.cached(timeout=920)
+@cache.cached(timeout=1920)
 def show_news(category,date,news_id):
 	nid = str(news_id)
 	mid = None
@@ -91,7 +91,7 @@ def show_news(category,date,news_id):
 		news = json.load(response)
 
 		if "news_title" in news:
-			col.insert(news)
+			#col.insert(news)
 			status = "api"
 			titl = news.get('news_title')
 
