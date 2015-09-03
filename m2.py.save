@@ -13,7 +13,8 @@ from pyga.requests import Tracker, Page, Session, Visitor
 application = Flask(__name__)
 conn = pymongo.MongoClient("mongodb://m2user:hailmyas$@localhost/test?authMechanism=SCRAM-SHA-1")
 app = application
-db = conn.test
+conn = pymongo.MongoClient("mongodb://m2:12345@localhost/test?authMechanism=SCRAM-SHA-1")
+= conn.test
 col = db.news
 
 #PYGA ANALYTICS START
@@ -75,8 +76,8 @@ def show_news(category,date,news_id):
 	mid = None
 	exists = False
 
-	#news = col.find_one({'news_id': nid})
-	news = None
+	news = col.find_one({'news_id': nid})
+
 	if news is not None:
 		mid = news.get('_id')
 
@@ -148,4 +149,4 @@ if __name__ == '__main__':
 	handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
 	handler.setLevel(logging.INFO)
 	app.logger.addHandler(handler)
-	application.run(host='0.0.0.0',debug=True)
+	application.run(host='0.0.0.0')
