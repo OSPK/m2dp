@@ -25,8 +25,14 @@ session = Session()
 # tracker.track_pageview(page, session, visitor)
 #PYGA ANALYTCIS STOP
 
-cache = Cache(application,config={'CACHE_TYPE': 'redis'})
-CACHE_REDIS_URL = "redis://linus@localhost:6379/"
+cache = Cache(app, config={
+    'CACHE_TYPE': 'redis',
+    'CACHE_KEY_PREFIX': 'fcache',
+    'CACHE_REDIS_HOST': 'localhost',
+    'CACHE_REDIS_PORT': '6379',
+    'CACHE_REDIS_URL': 'redis://localhost:6379'
+    })
+#CACHE_REDIS_URL = "redis://linus@localhost:6379/"
 
 @application.route('/')
 @cache.cached(timeout=120)
