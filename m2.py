@@ -26,7 +26,7 @@ session = Session()
 #PYGA ANALYTCIS STOP
 
 cache = Cache(application,config={'CACHE_TYPE': 'redis'})
-CACHE_REDIS_URL = "redis://linus@localhost:6379/"
+#CACHE_REDIS_URL = "redis://linus@localhost:6379/"
 
 @application.route('/')
 @cache.cached(timeout=120)
