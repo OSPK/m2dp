@@ -48,6 +48,7 @@ def index():
 	return render_template('index.html', news=news)
 
 @application.route('/categories/')
+@cache.cached(timeout=1200)
 def show_category_index():
 
 	#GA Track
