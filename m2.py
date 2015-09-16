@@ -1,5 +1,3 @@
-import logging
-from logging.handlers import RotatingFileHandler
 from flask import Flask
 from flask import render_template
 from flask import jsonify
@@ -153,8 +151,5 @@ def update_news(category,date,news_id):
 	return render_template('news.html', news=news, category=category, status=status)
 
 if __name__ == '__main__':
-	handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
-	handler.setLevel(logging.INFO)
-	app.logger.addHandler(handler)
 	application.run(debug=True,host='0.0.0.0')
 
