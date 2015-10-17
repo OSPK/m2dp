@@ -81,29 +81,29 @@ def show_news(category,date,news_id):
 	mid = None
 	exists = False
 
-	news = col.find_one({'news_id': nid})
-	news = None
+	# news = col.find_one({'news_id': nid})
+	# news = None
 
-	if news is not None:
-		mid = news.get('_id')
+	# if news is not None:
+	# 	mid = news.get('_id')
 
-		if "news_title" in news:
-			status = "db"
-			titl = news.get('news_title')
+	# 	if "news_title" in news:
+	# 		status = "db"
+	# 		titl = news.get('news_title')
+
+	# else:
+	url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
+	response = urllib.urlopen(url);
+	news = json.load(response)
+
+	if "news_title" in news:
+		col.insert(news)
+		status = "api"
+		titl = news.get('news_title')
 
 	else:
-		url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
-		response = urllib.urlopen(url);
-		news = json.load(response)
-
-		if "news_title" in news:
-			col.insert(news)
-			status = "api"
-			titl = news.get('news_title')
-
-		else:
-			status = news['result']
-			titl = "None"
+		status = news['result']
+		titl = "None"
 
 
 	#GA Track
