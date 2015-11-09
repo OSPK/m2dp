@@ -10,9 +10,9 @@ from pyga.requests import Tracker, Page, Session, Visitor
 
 application = Flask(__name__)
 app = application
-#conn = pymongo.MongoClient("mongodb://m2user:hailmyas$@localhost/test?authMechanism=SCRAM-SHA-1")
-db = conn.test
-col = db.news
+# conn = pymongo.MongoClient("mongodb://m2user:hailmyas$@localhost/test?authMechanism=SCRAM-SHA-1")
+# db = conn.test
+# col = db.news
 
 #PYGA ANALYTICS START
 tracker = Tracker('UA-63492173-1', 'telenornews.pk')
