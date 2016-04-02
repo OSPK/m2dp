@@ -1,2 +1,4 @@
 m2env/
+env/
+env3/
 *.pyc

@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div class="menu-container">
-			<img class="clearfix" src="{{ url_for('static', filename='images/logo-05.png') }}" alt="Home">
+			<img width="200" class="clearfix" src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Home">
 			<ul class="menu">
 				<li><a href="/categories">موضوعات</a></li>
 				<li><a class="home" href="/">تازہ ترین</a></li>
@@ -22,7 +22,7 @@
 		</div>
 		{% block content %}{% endblock %}
 		<footer>
-			<a href="http://dailypakistan.com.pk"><img alt="Daily Pakistan Logo" width="100" src="{{ url_for('static', filename='images/daily-pakistan-logo.png') }}"></a>
+			<img alt="Free Basics" width="200" src="{{ url_for('static', filename='images/freebasics.png') }}">
 			<a style="color:white;" href="http://dailypakistan.com.pk"><p>In Partnership with Daily Pakistan</p></a>
 		</footer>
 	</body>

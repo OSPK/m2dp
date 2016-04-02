@@ -73,7 +73,7 @@ article.story:last-child {
 }
 
 .menu-container {
-	background: #FFF;
+	background: #017e52;
 	text-align: center;
 	padding: 3em 3em 0em 3em;
 }
@@ -91,11 +91,11 @@ article.story:last-child {
 }
 .menu li a {
 	font-size: 1.5em;
-	background-color: #8AD2F2;
-	color: #3C596C;
-	border-bottom: 3px solid #3A8DC8;
-	border-right: 1px solid #3A8DC8;
-	border-left: 1px solid #3A8DC8;
+	background-color: #08A26C;
+	color: #efefef;
+	border-bottom: 3px solid #38C191;
+	border-right: 1px solid #38C191;
+	border-left: 1px solid #38C191;
 	border-radius: 5px;
 	width: 100%;
 	padding-top: 1em;
@@ -186,14 +186,11 @@ footer {
 	text-align: center;
 	padding:30px;
 	color: #efefef;
-	background: #016F3A;
+	background: #6b20a2;
 }
 footer p {
   margin: 10px;
   font-family: sans-serif;
-}
-footer img {
-	border: 5px solid rgb(1, 111, 58);
 }
 
 /* All Bigger screens */
