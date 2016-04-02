@@ -1,11 +1,14 @@
 Flask==0.10.1
 Flask-Cache==0.13.1
+gevent==1.1.0
+greenlet==0.4.9
 itsdangerous==0.24
 Jinja2==2.7.3
 MarkupSafe==0.23
 newrelic==2.52.0.40
 pymongo==3.0.1
 redis==2.10.3
+requests==2.9.1
 simplejson==3.7.3
 uWSGI==2.0.10
 uwsgitop==0.8
