@@ -22,9 +22,9 @@ cache = Cache(app, config={
 @application.route('/')
 @cache.cached(timeout=120)
 def index():
-
 	url = 'http://dailypakistan.com.pk/mobile_api/homepage_news_listing/format/json/limit_start/0/num_of_records/15/print_or_digital/digital/news_image_size/small'
-	response = requests.get(url)
+	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+	response = requests.get(url, headers=headers)
 	news = response.json()
 	return render_template('index.html', news=news)
 
@@ -38,7 +38,8 @@ def show_category_index():
 @cache.cached(timeout=120)
 def show_category_page(categoryname):
 	url = ('http://dailypakistan.com.pk/mobile_api/category_news_listing/format/json/category_slug/%s/start_limit/0/num_of_records/15/news_image_size/small' % categoryname)
-	response = requests.get(url)
+	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+	response = requests.get(url, headers=headers)
 	news = response.json()
 
 	return render_template('index.html', news=news)
@@ -51,7 +52,8 @@ def show_news(category,date,news_id):
 	exists = False
 
 	url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
-	response = requests.get(url)
+	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+	response = requests.get(url, headers=headers)
 	news = response.json()
 
 	if "news_title" in news:
@@ -68,7 +70,8 @@ def show_news(category,date,news_id):
 @application.route('/<category>/<date>/<int:news_id>/update')
 def update_news(category,date,news_id):
 	url = ('http://dailypakistan.com.pk/mobile_api/news_detail/news_id/%d/format/json/news_image_size/medium' % news_id)
-	response = requests.get(url)
+	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+	response = requests.get(url, headers=headers)
 	news = response.json()
 
 	return render_template('news.html', news=news)
